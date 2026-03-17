@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>UNIAUTOS</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#f2f2f2;
+}
+
+header{
+background:#c40000;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+header h1{
+margin:0;
+font-size:36px;
+text-decoration:underline;
+}
+
+header h3{
+margin-top:5px;
+font-weight:normal;
+}
+
+.logo{
+width:120px;
+margin-top:10px;
+}
+
+.banner{
+width:100%;
+height:250px;
+object-fit:cover;
+}
+
+nav{
+background:#333;
+padding:10px;
+text-align:center;
+}
+
+nav button{
+background:white;
+border:none;
+padding:10px 18px;
+margin:5px;
+border-radius:6px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.container{
+display:flex;
+}
+
+.sidebar{
+width:200px;
+background:#e4e4e4;
+padding:15px;
+}
+
+.sidebar input{
+width:100%;
+padding:8px;
+}
+
+.content{
+flex:1;
+background:white;
+padding:25px;
+}
+
+h2{
+color:#c40000;
+text-decoration:underline;
+}
+
+.marcas{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+gap:15px;
+margin-top:20px;
+}
+
+.marca{
+background:#eee;
+padding:12px;
+text-align:center;
+border-radius:6px;
+font-weight:bold;
+}
+
+.carousel{
+max-width:600px;
+margin:auto;
+position:relative;
+}
+
+.carousel img{
+width:100%;
+border-radius:10px;
+display:none;
+}
+
+.carousel img.active{
+display:block;
+}
+
+.carousel button{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+background:#c40000;
+color:white;
+border:none;
+padding:10px;
+cursor:pointer;
+}
+
+.prev{left:10px;}
+.next{right:10px;}
+
+footer{
+background:#333;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+.redes img{
+width:30px;
+margin:10px;
+}
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+}
+
+.whatsapp img{
+width:50px;
+}
+
+@media(max-width:768px){
+
+.container{
+flex-direction:column;
+}
+
+.sidebar{
+width:100%;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>UNIAUTOS</h1>
+
+<h3>Taller mecánico automotriz</h3>
+
+<img src="logo.jpeg" class="logo">
+
+</header>
+
+<img class="banner" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70">
+
+<nav>
+
+<button onclick="ir('quienes')">Quiénes somos</button>
+<button onclick="ir('trabajadores')">Trabajadores</button>
+<button onclick="ir('galeria')">Cómo nos vemos</button>
+<button onclick="ir('ubicacion')">Ubicación</button>
+
+</nav>
+
+<div class="container">
+
+<div class="sidebar">
+
+<h3>Buscar</h3>
+<input type="text" id="buscar" placeholder="Buscar palabra..." onkeyup="buscarTexto()">
+
+</div>
+
+<div class="content">
+
+<section id="quienes">
+
+<h2>Información corporativa</h2>
+
+<p>
+Nuestro taller mecánico nació con el objetivo de ofrecer un servicio confiable y accesible para los conductores de la comunidad. A lo largo del tiempo hemos trabajado con dedicación mejorando nuestros conocimientos y herramientas para brindar un servicio eficiente y de calidad.
+</p>
+
+<h2>Misión</h2>
+
+<p>
+Ofrecer servicios de mecánica automotriz con calidad, responsabilidad y eficiencia garantizando el buen funcionamiento de los vehículos y la satisfacción de nuestros clientes.
+</p>
+
+<h2>Visión</h2>
+
+<p>
+Ser un taller mecánico reconocido en la comunidad por la excelencia de nuestros servicios y la confianza de nuestros clientes.
+</p>
+
+</section>
+
+<section>
+
+<h2>Marcas que atendemos</h2>
+
+<div class="marcas">
+
+<div class="marca">Mercedes Benz</div>
+<div class="marca">BMW</div>
+<div class="marca">Toyota</div>
+<div class="marca">Renault</div>
+<div class="marca">Chevrolet</div>
+<div class="marca">Peugeot</div>
+<div class="marca">Ford</div>
+<div class="marca">Hyundai</div>
+<div class="marca">Nissan</div>
+<div class="marca">Jeep</div>
+<div class="marca">Mazda</div>
+<div class="marca">Audi</div>
+
+</div>
+
+</section>
+
+<section id="trabajadores">
+
+<h2>Nuestro equipo</h2>
+
+<p>
+Nuestro equipo está conformado por técnicos especializados en diagnóstico y reparación automotriz con experiencia en mantenimiento, reparación de motores y sistemas eléctricos.
+</p>
+
+</section>
+
+<section id="galeria">
+
+<h2>Cómo nos vemos</h2>
+
+<div class="carousel">
+
+<img src="foto1.jpeg" class="active">
+<img src="foto2.jpeg">
+<img src="foto3.jpeg">
+
+<button class="prev" onclick="mover(-1)">❮</button>
+<button class="next" onclick="mover(1)">❯</button>
+
+</div>
+
+</section>
+
+<section id="ubicacion">
+
+<h2>Ubicación</h2>
+
+<p>Calle 19 #28-48 barrio San José Armenia Quindío</p>
+
+<iframe
+src="https://maps.google.com/maps?q=calle%2019%2028-48%20Armenia%20Quindio&t=&z=15&ie=UTF8&iwloc=&output=embed"
+width="100%"
+height="350"
+style="border:0;">
+</iframe>
+
+</section>
+
+</div>
+</div>
+
+<footer>
+
+<p>Teléfono: 3187442327</p>
+
+<div class="redes">
+
+<a href="https://instagram.com/UNIAUTOS11" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/174/174855.png">
+</a>
+
+<a href="https://wa.me/573187442327" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+</a>
+
+</div>
+
+</footer>
+
+<script>
+
+function ir(id){
+document.getElementById(id).scrollIntoView({behavior:"smooth"});
+}
+
+function buscarTexto(){
+
+let texto=document.getElementById("buscar").value.toLowerCase();
+let secciones=document.querySelectorAll("section");
+
+secciones.forEach(sec=>{
+if(sec.innerText.toLowerCase().includes(texto) && texto!=""){
+sec.scrollIntoView({behavior:"smooth"});
+}
+});
+
+}
+
+let index=0;
+
+function mover(d){
+
+let imgs=document.querySelectorAll(".carousel img");
+
+imgs[index].classList.remove("active");
+
+index+=d;
+
+if(index<0) index=imgs.length-1;
+if(index>=imgs.length) index=0;
+
+imgs[index].classList.add("active");
+
+}
+
+</script>
+
+</body>
+</html>
